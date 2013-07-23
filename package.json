@@ -1,0 +1,12 @@
+{
+  "name": "oauth2-client-example",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "3.3.x",
+    "ejs": "0.8.x",
+    "oauth": "0.9.x",
+    "passport": "0.1.x",
+    "passport-google-oauth": "0.1.x",
+    "passport-oauth": "0.1.x"
+  }
+}

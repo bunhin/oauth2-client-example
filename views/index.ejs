@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OAuth 2.0 Client Example</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <!-- -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  </head>
+  <body class="enyo-unselectable">
+
+  <style type="text/css" media="all">
+  <% include assets/stylesheets/screen.css %>
+  </style>
+
+  <section id="body" class="enyo-fit enyo-clip">
+    <h1>OAuth 2.0 Client Example</h1>
+  <% if (oauth2) { %>
+    <a href="/logout">Logout</a>
+  <% } %>
+    <section class="enyo-panels enyo-arranger enyo-arranger-fit enyo-panels-fit-narrow" id="main">
+      <div style="transform: translateZ(0px); opacity: 1;" id="form-fields">
+      <% if (!oauth2) { %>
+        <h3>OAuth 2.0 Client Settings</h3>
+        <form action="/settings" method="post">
+          <div class="label" id="form-token_endpointLabel">This Client's Redirect URI</div>
+          <input class="enyo-input input" id="form-redirect_uri" name="redirect_uri" value="<%= redirect_uri %>" readonly>
+          <div class="label" id="form-client_idLabel">Client ID</div>
+          <input class="enyo-input input" id="form-client_id" name="client_id">
+          <div class="label" id="form-client_secretLabel">Client Secret</div>
+          <input class="enyo-input input" id="form-client_secret" name="client_secret">
+          <div class="label" id="form-scopeLabel">Scope</div>
+          <input class="enyo-input input" id="form-scope" name="scope">
+          <div class="label" id="form-auth_endpointLabel">Authorization Endpoint</div>
+          <input class="enyo-input input" id="form-auth_endpoint" name="auth_endpoint">
+          <div class="label" id="form-token_endpointLabel">Token Endpoint</div>
+          <input class="enyo-input input" id="form-token_endpoint" name="token_endpoint">
+          <input class="enyo-tool-decorator onyx-button enyo-unselectable button" name="submit" id="form-settingsButton" type="submit" value="Save Client Settings"/>
+        </form>
+      <% } else { %>
+      	<h2>Authorized</h2>
+        <form action="/refresh" method="post">
+          <div class="label" id="form-client_idLabel">Access Token</div>
+          <input class="enyo-input input" id="form-access_token" name="access_token" value="<%= oauth2.accessToken %>">
+          <div class="label" id="form-client_secretLabel">Refresh Token</div>
+          <input class="enyo-input input" id="form-refresh_token" name="refresh_token" value="<%= oauth2.refreshToken %>">
+          <input class="enyo-tool-decorator onyx-button enyo-unselectable button" name="submit" id="form-refreshButton" type="submit" value="Refresh Access Token"/>
+        </form>
+
+      <% } %>
+      </div>
+    </section>
+  </section>
+  </body>
+</html>
