@@ -1,0 +1,132 @@
+/* Helper classes for css3 */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+body.enyo-unselectable.enyo-body-fit {
+  margin: 0 auto;
+  padding: 0;
+  height: auto;
+}
+#body {
+  position: relative;
+  width: 600px;
+  margin: 30px auto;
+}
+#body a {
+  color: #FF6600;
+}
+#main {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  background-color: #2F6C9D;
+  padding: 20px 20px 30px 20px;
+  position: relative;
+  overflow: visible;
+  z-index: 2;
+}
+#main div {
+  position: relative;
+}
+#main p {
+  color: #FFFFFF;
+}
+#main ul li {
+  margin: 0 -20px;
+  color: #FFFFFF;
+}
+#main #form-fields {
+  margin: 0 auto;
+}
+#main #valid {
+  color: #33CC00;
+  font-weight: bold;
+}
+#main #warn {
+  color: #FF6600;
+  font-weight: bold;
+}
+#main #error {
+  color: #FF0033;
+  font-weight: bold;
+}
+#main .input {
+  display: block;
+  width: 97%;
+  margin: 0;
+  outline: none;
+  color: #666666;
+  font-smoothing: antialiased;
+  font-size: 14px;
+  line-height: 1.5em;
+}
+#main .input:-moz-placeholder {
+  color: #d5d5d5;
+}
+#main .input:-ms-input-placeholder {
+  color: #d5d5d5;
+}
+#main .input::-webkit-input-placeholder {
+  color: #d5d5d5;
+}
+#main .label {
+  display: block;
+  margin: 15px auto 7px auto;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: #2f6c9d 2px 2px 1px;
+}
+#main .button {
+  display: block;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font-size: 11px;
+  padding: 4px;
+  margin: 30px 0 0 72%;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  color: #0e0b38;
+  text-transform: uppercase;
+  text-shadow: #ccc 0 0 0;
+  font-weight: 500;
+}
+
+#main #form-settingsButton {
+  margin: 30px 0 0 73%;
+}
